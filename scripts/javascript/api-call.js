@@ -12,6 +12,10 @@ function setup() {
     var url = xhr + url;
 }
 
+$(function () {
+    $("#output-ajax").hide(300);
+});
+
 
 
 fetch('http://xkcd.com/info.211.json')
