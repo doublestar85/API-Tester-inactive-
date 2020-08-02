@@ -1,3 +1,12 @@
-tg-main {
-
-}
+h1 {
+    color: #ee5c2b;
+    background: repeating-linear-gradient(
+    45deg,
+    #373535,
+    #373535 5px,
+    /* #FFFF6F 10px, */
+    #373535 10px,
+    #FFFF6F 40px
+    );
+    font-size: 75px;
+};
