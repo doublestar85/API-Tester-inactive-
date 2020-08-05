@@ -9,4 +9,12 @@ h1 {
     #FFFF6F 40px
     );
     font-size: 75px;
-};
+}
+
+/* .panel-content {
+    width: 420px;
+} */
+
+.io-style {
+    display: flex
+}

@@ -8,97 +8,134 @@
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="scripts/css/style.css">
+    <link rel="stylesheet" href="scripts/css/prism.css">
     
 </head>
 <body>
     <!-- start of tg-main -->
-    <div class="tg-main container d-flex flex-column">
-        <h1 class="d-flex justify-content-center">TESTGROUND - PLEASE IGNORE</h1>
+<div class="tg-main container d-flex flex-column">
+    <h1 class="d-flex justify-content-center">TESTGROUND - PLEASE IGNORE</h1>
 
-            <!-- three buttons. xhm, ajax, fetch. all three should eventually be explained. -->
-                <!-- three panels displaying the output of the 3 types of api calls -->
+        <!-- three buttons. xhm, ajax, fetch. all three should eventually be explained. -->
 
-    <div id="xhmHTML-api" class="button-group">
-        <div class="form-group api-test-template" id="xhm-action">
-            <form action="scripts/javascript/xhm-api-call.js">
-                <h2>XHM Example! - Enter your birthday below!</h2>
+<!-- three panels displaying the output 3 types of api calls -->
+
+<div class="api-test-template" id="xhm-action">
+    <div class="panel-body">
+        <div class="panel-heading">
+            <h2>XHM Example! -</h2>
+        </div>
+        <!-- Input/Out Buttons and Containers -->
+            <div class="io-style">
+                <Label>XHM Input!</Label>
+                <input type="search" value="">
+                <div class="btn-group">
+                <button id="submit-xhm" class="btn btn-primary" type="submit" onclick="alert('button pressed')">Submit for XHM Query</button>
+                </div>
+                <Label>XHM Output!</Label>
+                <textarea id="output-xhm" class="panel-content"></textarea>
+            </div>
+    </div>
+</div>
+
+<div class="api-test-template" id="ajax-action">
+    <div class="panel-body">
+        <div class="panel-heading">
+            <h2>AJAX Example! -</h2>
+        </div>
+            <!-- Input/Out Buttons and Containers -->
+            <div class="io-style">
+            <div>
+                <Label>AJAX Input!</Label>
+                <input type="url" id="url" value="">
+                <div class="btn-group">
+                <button id="get-ajax" class="btn btn-primary" >Submit for AJAX GET</button>
+                </div>
+            </div>
+            <div>
+                <input type="text" id="data">
+                <div class="btn-group">
+                <button id="post-ajax" class="btn btn-primary" >Submit for AJAX POST</button>
+                </div>
+                <Label>AJAX Output!</Label>
+                <textarea id="output-ajax" class="panel-content"></textarea>
+            </div>
+            </div>
+    </div>
+ </div>
+
+<div class="api-test-template" id="fetch-action">
+    <div class="panel-body">
+            <div class="panel-heading">
+                <h2>Fetch Example! -</h2>
+            </div>
+            <!-- Input/Out Buttons and Containers -->
+            <div class="io-style">
                 <input type="search" value="" >
-                <button id="submit-xhm" class="btn btn-primary" type="submit">Submit for XHM Query</button>
-            </form>
-            <div class="panel-body">
-                <div class="panel-heading">
-                    <div id="output-xhm" class="panel-content">
-                        <ul>content to be displayed!</ul>    
-                    </div>
-                </div>
+                <button id="submit-fetch" onclick="GetFData()" class="btn btn-primary" type="submit">Submit for Fetch query</button>
+                <textarea id="output-fetch" class="panel-content"></textarea>    
             </div>
-        </div>
     </div>
+</div>
 
-    <div id="ajax-api" class="button-group">
-        <div class="form-group api-test-template" id="ajax-action">
-            <form action="">
-                <h2>AJAX Example! - Enter your birthday below!</h2>
-                <input type="search" value="" >
-                <button id="submit-ajax" class="btn btn-primary" type="submit">Submit for Ajax Query</button>
-            </form>
-            <div class="panel-body">
-                <div class="panel-heading">
-                    <div id="output-ajax" class="panel-content">
-                        <ul>content to be displayed!</ul>    
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>              <!-- end of tg-main -->
 
-    <div class="button-group api-test-template">
-        <div class="form-group api-test-template" id="fetch-action">
-            <form action="scripts/javascript/fetch-api-call.js">
-                    <h2>Fetch Example! - Enter your birthday below!</h2>
-                    <input type="search" value="" >
-                    <button id="submit-fetch" class="btn btn-primary" type="submit">Submit for Fetch query</button>
-            </form>
-            <div class="panel-body">
-                <div class="panel-heading">
-                    <div id="output-fetch" class="panel-content">
-                        <ul>content to be displayed!</ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end of tg-main -->
-    <div class="tg-explaination">
-            <p class="container d-flex">
-            a. What is the purpose of this API - The xkcd API lets you fetch comics and their metadata which includes the date it appeared, its title, a transcript, alternate text, and the image source file for visual output.
-            <br>
-            b. Getting Started with this API  
-            ???
-            <br>
-            c. The link to the API's homepage
-            http://xkcd.com/
-            <br>
-            d. What do you need to do to be able to use this API (OAuth, APIKey, completely open)?The API is open. No OAuth, APIKey or CORS is required.
-            <br>
-            e. Is there is a tutorial, documentation, or great how-to? Share the links!
-            No.
-            <br>
-            f. Come up with a few ideas of projects that someone could build with this API.
-            <br>
-            COMIC VIEWER: You could build a website to display the current comic, a random comic, or a specific one in the xkcd series. Optionally, you could add a date viewer to retrieve a comic, assuming one appeared on that date.
-            <br>
-            g. (Optional but fun!) Create a very simple webpage that queries the API and displays some sort of result to the user.<br>
-            See Doubl.staR's GitHub repository.</p>
+<div class="tg-explaination">
+    <details>
+        <summary class="k-questions">What is the purpose of this API - </summary>
+        <p class="container d-flex">
+            The xkcd API lets you fetch comics and their metadata which includes the date it appeared, its title, a transcript, alternate text, and the image source file for visual output.</p>
+    </details>
+    <details>
+        <summary class="k-questions">Getting Started with this API - </summary>
+                <p>First, you should be aware that to access this API, another API is required. In this case <a id="cors" href="https://github.com/Rob--W/cors-anywhere/">CORSANYWHERE</a> - <em>Cross-Origin Resource Sharing</em>. Most of the API service providers will have CORS enabled in their response object as they are meant to be consumed by different domains.</p>
+    </details>
+    <details>
+        <summary class="k-questions">The link to the API's homepage - </summary>
+<p><a href="http://xkcd.com/"></a>http://xkcd.com/</p>
+    </details>
+    <details>
+                    <summary class="k-questions">What do you need to do to be able to use this API (OAuth, APIKey, completely open)? - </summary>
+
+<p>The API is open. While the API is open, you are able to obtain a Key by contacting the API author for private usage. <a href="#cors">CORS</a> is required.</p>
+    </details>
+
+    <details>
+                    <summary class="k-questions">Is there is a tutorial, documentation, or great how-to? Share the links! - </summary>
+           <p>No. Not exactly. But <a href="https://stephencharlesweiss.com/xkcd/">here ya go</a>. The cliff notes would be to use the following snippet if you're attempting to use AJAX. Otherwise, reference <a href="https://github.com/Rob--W/cors-anywhere/">CORSANYWHERE</a> Documentation. 
+<pre><code>
+
+jQuery.ajaxPrefilter(function(options) {
+if (options.crossDomain && jQuery.support.cors) {
+options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+}
+});
+
+</code></pre>
+
+Meaning, you must create <pre><code>options.url</code></pre> on load like I have <pre><code>x.open(options.method, cors_api_url + options.url); </code></pre></p>
+    </details>
+    <details>
+                    <summary class="k-questions">Come up with a few ideas of projects that someone could build with this API - </summary>
+
+           <p>XKCD COMIC Association App: You could build a website to display the current comic(this might be stealing content). You could associate any of the properties with dates, randomized ads based on how many times a specific comic has been viewed. Api's are a lot. They are really only limited by the documentation of the api, your imagination, and your understanding of how api's are approached.
+            API Dashboard - Similar to Postman, or Swagger.io. One could include this and other API's as preset for test purposes. I've used <a href="https://www.fillmurray.com/">FillMurray.com</a> in the past in a similar manner.</p>
+    </details>
+    <details>
+                    <summary class="k-questions">(Optional but fun!) Create a very simple webpage that queries the API and displays some sort of result to the user - </summary>
+            See Doubl.staR's GitHub <a href="https://doublestar85.github.io/#testground">repo</a></p>
+    </details>
     </div>
 
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="scripts/javascript/prism.js"></script>
 
 <!-- API scripts -->
- <script src="scripts/javascript/main.js"></script>
- 
+<script src="scripts/javascript/ajax-api-call.js"></script>
+<script src="scripts/javascript/fetch-api-call.js"></script>
+<!-- <script src="scripts/javascript/main.js"></script> -->
 </body>
 </html>

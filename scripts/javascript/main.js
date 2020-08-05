@@ -9,7 +9,7 @@
 
 
 function reqListener () {
-  console.log(this.responseText);
+  console.log(this.responseText[2]);
 }
 
 var oReq = new XMLHttpRequest();
